@@ -44,7 +44,7 @@ $routes->post('/update/(:num)', 'MahasiswaController::update/$1');
 $routes->get('/edit/(:num)', 'MahasiswaController::edit/$1');
 $routes->get('/index', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
-
+$routes->get('/produk', 'ProdukController::index');
 
 /*
  * --------------------------------------------------------------------
