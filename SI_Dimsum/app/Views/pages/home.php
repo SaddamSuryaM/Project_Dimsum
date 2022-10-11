@@ -1,7 +1,3 @@
-<?php
-
-use Faker\Provider\Base;
-?>
 <?= $this->extend('templates/template'); ?>
 <?= $this->section('content'); ?>
 
@@ -17,41 +13,38 @@ use Faker\Provider\Base;
     .judul {
       margin-top: 100px;
       /* margin-bottom: 200px; */
-      margin-right: 100px;
+      margin-right: 200px;
       /* margin-left: 80px; */
+      font-size: 40px;
     }
-
     .dimsum {
-      margin-top: 200px;
+      margin-top: 100px;
       /* margin-bottom: 200px; */
       margin-right: 100px;
       /* margin-left: 80px; */
     }
-
-   .tombol{
-    margin-right: auto;
-   }
   </style>
-
+  
 </head>
 
 <body>
-  <div class="container text-center">
+  <div class="container">
     <div class="row">
       <div class="col-lg-7">
-        <p class="fs-2 judul"><strong><br>SDM (SI DIMSUM MBOK)</strong></p>
-        <p>Kami menjamin akan memberikan dimsum dengan kualitas terbaik dan harga termurah. Dimsum mbok dibuat dengan bahan segar pilihan terbaik. Kami berkomitmen untuk menyediakan dimsum yang berkualitas,bebas bahan pengawet,cepat dalam
-          penyajian, yang tentunya dengan harga terjangkau. Kami menjamin akan memberikan dimsum dengan kualitas terbaik dan harga termurah. Dimsum mbok dibuat dengan bahan segar pilihan terbaik. Kami berkomitmen untuk menyediakan dimsum yang berkualitas,bebas bahan pengawet,cepat dalam
-          penyajian, yang tentunya dengan harga terjangkau. </p>
+        <p class="judul" ><strong><br>SDM (SI DIMSUM MBOK)</strong></p>
+        <p style="font-size: 20px;">Kami menjamin akan memberikan  dimsum dengan kualitas terbaik  dan harga termurah. Dimsum mbok  dibuat dengan bahan segar pilihan terbaik. Kami berkomitmen untuk menyediakan dimsum yang berkualitas,bebas bahan pengawet,cepat dalam 
+penyajian, yang tentunya dengan harga terjangkau. Kami menjamin akan memberikan  dimsum dengan kualitas terbaik  dan harga termurah. Dimsum mbok  dibuat dengan bahan segar pilihan terbaik. Kami berkomitmen untuk menyediakan dimsum yang berkualitas,bebas bahan pengawet,cepat dalam 
+penyajian, yang tentunya dengan harga terjangkau. </p>
       </div>
-      <div class="col-lg-5">
-        <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/dimsum.png">
-      </div>
-
+        <div class="col-lg-5">
+          <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum1.png">
+        </div>
+ 
     </div>
   </div>
+  </div>
   <div class="container justify-text-center">
-    <a href="<?= base_url('produk') ?>" type="button" class="btn btn-info">Detail Produk</a>
+    <a href="<?= base_url('produk') ?>" type="button" class="btn btn-warning" >Detail Produk > </a>
     </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
