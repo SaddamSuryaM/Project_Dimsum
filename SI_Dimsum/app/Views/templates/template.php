@@ -7,19 +7,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Top Navigation</title>
+  <title>SI DIMSUM</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/Assets/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="/Assets/AdminLTE-3.2.0/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="/Assets/AdminLTE-3.2.0/plugins/summernote/summernote-bs4.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  
   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
     .tes{
       border-radius: 25px;
+    }
+    *{
+    font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
@@ -27,40 +32,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-light" style="background-color: #CDC2B2;">
+  <nav class="navbar navbar-expand-md navbar-light navbar-light" style="background-color: #CDC2B2;">
     <div class="container">
-        <a href="/Assets/AdminLTE-3.2.0/index3.html" class="navbar-brand">
+        <a href="home" class="">
           
-        <img src="/Assets/AdminLTE-3.2.0/dist/img/Logo-Dimsum.png" alt="AdminLTE Logo" style="opacity: .8;" width="100px" >
+        <img src="/Assets/AdminLTE-3.2.0/dist/img/Logo-Dimsum.png" alt="AdminLTE Logo" style="opacity: .8;" width="120px" >
        
-      </a>
+        </a>
 
-      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button>   
 
-      <div class="collapse navbar-collapse order-3 container justify-text-center" id="navbarCollapse">
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="nav nav-pills flex-column flex-sm-row">
         <div class="navbar navbar-expand-lg tes" style="background-color: #41371D;">
             <li class="nav-item" style="margin-right: 50px ; margin-left:50px">
-            <a href="/home" class="nav-link" style="color:#ffffff">Dashboard</a>
+            <a href="/home" class="nav-link" style="color:#FFE6D4; " >Dashboard</a>
           </li>
 
           <li class="nav-item" style="margin-right: 50px ;">
-            <a href="/produk" class="nav-link" style="color:#ffffff">Varian dan Harga</a>
+            <a href="/produk" class="nav-link" style="color:#FFE6D4">Varian dan Harga</a>
           </li>
 
           <li class="nav-item" style="margin-right: 50px ;">
-            <a href="/mahasiswa" class="nav-link" style="color:#ffffff">Belanja</a>
+            <a href="/belanja" class="nav-link" style="color:#FFE6D4">Belanja</a>
           </li>
 
           <li class="nav-item" style="margin-right: 50px ;">
-            <a href="/mahasiswa" class="nav-link" style="color:#ffffff">Tentang Kami</a>
+            <a href="/contact"class="nav-link" style="color:#FFE6D4">Tentang Kami</a>
           </li>
 
           <li class="nav-item" style="margin-right: 50px ;">
-            <a href="/mahasiswa" class="nav-link" style="color:#ffffff">Bantuan</a>
+            <a href="/bantuan" class="nav-link" style="color:#FFE6D4">Bantuan</a>
           </li>
           </div>
         </ul>
@@ -103,15 +108,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer" class="container-fluid" style="background-color:#41371D ;">
+  <footer class="main-footer" class="container" style="background-color:#41371D ;">
       <!-- To the right -->
-      <div class="float-right d-none d-sm-inline">
-        Anything you want
+      <div class="container text-left">
+        <div class="row">
+          <div class="col">
+            <h1>1245+</h1>
+            <p>Telah banyak mitra kami yang terpercaya dan berada dibeberapa wilayah bandar lampung</p>
+          </div>
+          <div class="col">
+            <h1>1300+</h1>
+            <p>Telah banyak mitra kami yang terpercaya dan berada dibeberapa wilayah jakarta</p>
+          </div>
+          <div class="col">
+            <h1>1545+</h1>
+            <p>Telah banyak mitra kami yang terpercaya dan berada dibeberapa wilayah bandung</p>
+          </div>
+        </div>
       </div>
-      <!-- Default to the left -->
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
-</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->

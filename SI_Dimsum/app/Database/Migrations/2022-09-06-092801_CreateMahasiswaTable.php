@@ -40,11 +40,11 @@ class CreateMahasiswaTable extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('mahasiswa');
+        $this->forge->createTable('produk');
     }
 
     public function down()
     {
-        $this->forge->dropTable('mahasiswa');
+        $this->forge->dropTable('produk');
     }
 }

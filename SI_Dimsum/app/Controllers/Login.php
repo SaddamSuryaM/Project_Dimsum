@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\Mahasiswa;
+use App\Controllers\BaseController;
 
 class Login extends BaseController
 {
@@ -49,3 +49,4 @@ class Login extends BaseController
         }
     }
 }
+
