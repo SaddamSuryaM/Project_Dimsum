@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\Mahasiswa;
+
+class Logout extends BaseController
+{
+    public function index()
+    {
+        return view('pages/login');
+    }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
+    }
+}
