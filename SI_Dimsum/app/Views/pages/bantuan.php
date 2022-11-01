@@ -89,33 +89,24 @@ input:checked ~ .accordion-content {
   </style>
   
 </head>
-
+</head>
 <body>
-  <h1>Yang sering ditanyakan : </h1>
-  <div class="accordion-wrapper">
-    <div class="accordion">
-      <input type="radio" name="radio-a" id="check1" checked>
-      <label class="accordion-label" for="check1">Bagaimana jika kami ingin menghubungi penjual?</label>
-      <div class="accordion-content">
-        <p>Anda cukup bergulir kehalaman tentang kami, dan anda kan menemukan kontak yang dapat anda hubungi </p>
+  <?php
+    $no = 1;
+     foreach ($help as $h): ?>
+
+      <div class="accordion">
+        <input type="radio" name="radio-a" id="<?php echo 'check' . $no?>" checked>
+        <label class="accordion-label" for="<?php echo 'check' . $no ?>"><?php echo $h['pertanyaan'] ?></label>
+        <div class="accordion-content">
+          <p><?php echo $h['jawaban'] ?></p>
+        </div>
       </div>
-    </div>
-    <div class="accordion">
-      <input type="radio" name="radio-a" id="check2">
-      <label class="accordion-label" for="check2">Bagaimana cara menjadi reseller dimsum mbok?</label>
-      <div class="accordion-content">
-        <p> Cara menjadi reseller cukup mendaftar melalui website ini, dan selanjutnya akan dihubungi oleh admin </p>
-      </div>
-    </div>
-    <div class="accordion">
-      <input type="radio" name="radio-a" id="check3">
-      <label class="accordion-label" for="check3">Bagaimana cara membeli dimsum disini?</label>
-      <div class="accordion-content">
-        <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
-      </div>
-    </div>
-  </div>
-</div>
+
+    <?php 
+    $no++;
+  endforeach ?>
+
 </body>
 
 </html>
