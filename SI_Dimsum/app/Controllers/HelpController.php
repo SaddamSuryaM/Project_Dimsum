@@ -61,7 +61,7 @@ class HelpController extends BaseController
             'help' => $helpModel->find($id),
             'title' => 'Edit Help'
         ];
-        return view('/help/edit', $data);
+        return view('/admin/help/editHelp', $data);
     }
 
     public function update($id){
@@ -79,6 +79,6 @@ class HelpController extends BaseController
 
         ];
         $helpModel->update($id,$data);
-        return redirect()->to('/help');
+        return redirect()->to('/Help');
     }
 }
