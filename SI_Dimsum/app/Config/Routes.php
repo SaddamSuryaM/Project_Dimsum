@@ -32,7 +32,7 @@ $routes->get('/bantuan', 'bantuan::index');
 $routes->get('/Help', 'HelpCOntroller::index');
 $routes->get('/tambahHelp', 'HelpCOntroller::create');
 $routes->post('/simpanHelp', 'HelpCOntroller::store');
-
+$routes->delete('/deleteHelp/(:num)', 'HelpController::delete/$1');
 
 // General
 $routes->get('(:any)', 'Pages::view/$1');
