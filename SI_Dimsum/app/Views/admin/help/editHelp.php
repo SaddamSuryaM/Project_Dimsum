@@ -18,11 +18,11 @@
       <nav class="navbar">
         <div class="navbar-left">
           <img class="img-fluid mb-5" src="<?php echo base_url('Assets/AdminLTE-3.2.0/dist/img/Logo-Dimsum.png') ?>">
-          <a class="link-item active" href="<?php echo base_url('tambahProduk') ?>">
+          <a class="link-item" href="<?php echo base_url('HomeAdmin') ?>">
             <span class="icon"></span>
             <span class="text">Management Produk</span>
           </a>
-          <a class="link-item" href="#">
+          <a class="link-item active" href=""<?php echo base_url('Help') ?>>
             <span class="icon"></span>
             <span class="text">Management Bantuan</span>
           </a>
@@ -31,31 +31,26 @@
 
       <div class="page-wrapper">
         <div class="card">
-          <form action="<?php echo base_url('simpanProduk') ?>" method="POST" enctype="multipart/form-data">
+          <form action="/updateHelp/<?=$help['id']?>" method="POST" enctype="multipart/form-data">
             <div class="card-header">
-              <h2>Tambah Produk</h2>
+              <h2>Tambah Help</h2>
             </div>
             <div class="card-body">
               <div class="mb-3">
-                <label for="produk">Nama Produk</label>
-                <input class="form-control" type="text" name="produk" id="produk">
+                <label for="pertanyaan">Pertanyaan</label>
+                <input class="form-control" type="text" name="pertanyaan" id="pertanyaan">
               </div>
               <div class="mb-3">
-                <label for="foto">Gambar</label>
-                <input class="form-control" type="file" name="foto" id="foto">
-              </div>
-              <div class="mb-3">
-                <label for="desk">Deskripsi</label>
-                <input class="form-control" type="text" name="desk" id="desk">
-              </div>
-              <div class="mb-3">
-                <label for="harga">Harga</label>
-                <input class="form-control" type="text" name="harga" id="harga">
+                <label for="jawaban">Jawaban</label>
+                <input class="form-control" type="text" name="jawaban" id="jawaban">
               </div>
             </div>
             <div class="card-footer">
-              <button class="btn" type="reset">Cancel</button>
+              <button class="btn" type="reset">Hapus Data</button>
               <button class="btn" type="submit">Submit</button>
+            </div>
+            <div class="card-footer">
+            <a href="<?php echo base_url('Help') ?>"><button class="btn" type="button">Cancel</button></a>
             </div>
           </form>
         </div>

@@ -23,22 +23,24 @@ class Login extends BaseController
                 $err = "silahkan masukan username dan password kembali";
             }
             if (empty($err)) {
-                $dataMember = $ModelMember->where(
-                    "member_username",
-                    $member_username
-                )->first();
-                if ($dataMember['member_password'] != ($member_password)) {
-                    $err = "password tidak sesuai";
-                }
-            }
-            if (empty($err)) {
-                $dataSesi = [
-                    'member_id' => $dataMember['member_id'],
-                    'member_username' => $dataMember['member_username'],
-                    'member_password' => $dataMember['member_password'],
+                $dataLogin = [
+                    'member_username' => $member_username,
+                    'member_password' => password_verify($member_password, PASSWORD_DEFAULT)
                 ];
-                session()->set($dataSesi);
-                return redirect()->to('/home');
+
+                $dataLogin = $ModelMember->where($dataLogin)->first();
+            }
+            if (!empty($dataLogin)) {
+                $dataLogin = [
+                    'member_id' => $dataLogin['member_id'],
+                    'member_username' => $dataLogin['member_username'],
+                    'member_password' => $dataLogin['member_password'],
+                ];
+                session()->set($dataLogin);
+                return redirect()->to('/HomeAdmin');
+            } else {
+                session()->setFlashdata('error', 'Username atau password salah');
+                return redirect()->to("login");
             }
 
             if ($err) {

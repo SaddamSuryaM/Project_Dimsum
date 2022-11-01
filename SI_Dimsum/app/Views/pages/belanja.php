@@ -249,7 +249,7 @@
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price">Rp.      0,00</span></div>
 			 					<div class="summary-item"><span class="text">Shipping</span><span class="price">Rp.      0,00</span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">Rp. 15.000,00</span></div>
-			 					<button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
+			 					<a href="/nota"><button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button></a> 
 				 			</div>
 			 			</div>
 		 			</div> 

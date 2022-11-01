@@ -89,25 +89,24 @@ input:checked ~ .accordion-content {
   </style>
   
 </head>
-<body>
+  <body>
   <?php
-    $no = 1;
-     foreach ($help as $h): ?>
+    $help = 1;
+     foreach ($data as $d): ?>
 
       <div class="accordion">
-        <input type="radio" name="radio-a" id="<?php echo 'check' . $no?>" checked>
-        <label class="accordion-label" for="<?php echo 'check' . $no ?>"><?php echo $h['pertanyaan'] ?></label>
+        <input type="radio" name="radio-a" id="<?php echo 'check' . $help?>" checked>
+        <label class="accordion-label" for="<?php echo 'check' . $help ?>"><?php echo $d['pertanyaan'] ?></label>
         <div class="accordion-content">
-          <p><?php echo $h['jawaban'] ?></p>
+          <p><?php echo $d['jawaban'] ?></p>
         </div>
       </div>
 
     <?php 
-    $no++;
+    $help++;
   endforeach ?>
 
 </body>
 
 </html>
-
 <?= $this->endSection(); ?>

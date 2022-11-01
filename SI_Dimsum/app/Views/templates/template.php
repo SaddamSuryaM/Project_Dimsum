@@ -67,6 +67,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item" style="margin-right: 50px ;">
             <a href="/bantuan" class="nav-link" style="color:#FFE6D4">Bantuan</a>
           </li>
+          <li class="nav-item" style="margin-right: 50px ;">
+                <a href="/login" class="btn btn-danger" style="color: #FFFFFF ;">Masuk</a>
+          </li>
           </div>
         </ul>
 
