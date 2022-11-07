@@ -12,7 +12,8 @@ class Logout extends BaseController
     }
     public function logout()
     {
+        $_SESSION['data'] = null;
         session()->destroy();
-        return redirect()->to('/');
+        return redirect()->to('/home');
     }
 }
