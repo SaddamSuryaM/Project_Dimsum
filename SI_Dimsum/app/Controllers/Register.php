@@ -3,30 +3,36 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\ModelAdmin;
+use App\Models\ModelUser;
 
 class Register extends BaseController
 {
+     public function __construct(){
+        $this->modelUser = new ModelUser();
+    }
+    
     public function index()
     {
+        if (session()->get('data')) {
+            return redirect()->to(base_url('home'));
+        }
         return view('admin/register');
     }
 
     public function simpan()
     {
-        $data = [
-            'member_username' => $this->request->getPost('username'),
-            'member_password' => $this->request->getPost('password'),
-            'konforim_pwd' => $this->request->getPost('konforim_pwd')
-        ];
-        if($data['member_password'] === $data['konforim_pwd']){
-            $simpan = new ModelAdmin();
-            unset($data['konforim_pwd']);
-            $data['member_password'] = password_hash($data['member_password'], PASSWORD_DEFAULT);
-            $simpan->insert($data);
-            return redirect()->to("home"); // blm tau di arahkan ke mana?
-        } else {
-            echo "salah";
+         if($this->request->getVar('conf_member_password') != $this->request->getVar('member_password')){
+            session()->setFlashdata('error', 'Password tidak sama');
+            return redirect()->to(base_url('daftar'));
+        }else{
+            $data = [
+                "member_username_user" => $this->request->getVar('member_username'),
+                "member_password_user" => password_hash($this->request->getVar('member_password'), PASSWORD_DEFAULT),
+                'is_admin' => "0"
+            ];
+            
+            $this->modelUser->insert($data);
+            session()->setFlashdata('success', 'Berhasil mendaftar');
+            return redirect()->to(base_url('loginuser'));
         }
-    }
 }
