@@ -26,11 +26,15 @@
             <span class="icon"></span>
             <span class="text">Management Bantuan</span>
           </a>
+          <a class="link-item" href="<?php echo base_url('/keluar') ?>">
+            <span class="icon"></span>
+            <span class="text">Logout</span>
+          </a>
         </div>
       </nav>
 
       <div class="page-wrapper">
-        <div class="card">
+        <div class="card" style="background-color: #CDC2B2;">
         <div class='pd-2'>
           
         <a class=" btn btn-primary mb-3" href="<?php echo base_url('tambahProduk') ?>" role="button"><i class="fa fa-plus"></i>Tambah</a>

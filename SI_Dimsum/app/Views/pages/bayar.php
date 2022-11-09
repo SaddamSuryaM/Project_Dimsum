@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
         :root {
-            --surface-color: #fff;
+            --surface-color: #FFFF;
             --curve: 40;
         }
 
@@ -31,6 +31,7 @@
             margin: 4rem 5vw;
             padding: 0;
             list-style-type: none;
+            background-color: #fef8f8;
         }
 
         .card-body {
@@ -40,7 +41,7 @@
             border-radius: calc(var(--curve) * 1px);
             overflow: hidden;
             text-decoration: none;
-
+            
         }
 
         .card__image {
@@ -136,10 +137,10 @@
 
 <body>
     <div class="container-fluid">
-        <div class="card" style="width : 25 rem;padding-bottom:60px;border-radius:50px;">
+        <div class="card" style="width : 25 rem;padding-bottom:60px;border-radius:50px; background-color:#F3ECE1">
 
             <div class="container" style="margin-top: 60px;">
-                <div class="card-body">
+                <div class="card-body" >
                     <div class="container" style="margin-left:30px ;">
                         <h2>Frozen Dimsum</h2>
                         <div style="display:flex ;">
@@ -149,13 +150,15 @@
                                 <p class="card-text">Jumlah : 2</p>
                                 <p class="card-text">Diskon : 5.000</p>
                                 <p class="card-text">Total : 35.000</p>
-                                <a href="/home" class="btn btn-dark">Bayar</a>
+                                <a href="/nota" class="btn btn-dark">Bayar</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
+        </div>
+    </div>
 
 </body>
 

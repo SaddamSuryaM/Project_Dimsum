@@ -89,8 +89,7 @@
  }
 
 .shopping-cart .summary{
-	border-top: 2px solid #5ea4f3;
-    /* background-color: #f7fbff; */
+	border-top: 2px solid #41371D;
     height: 100%;
     padding: 30px;
 }
@@ -151,113 +150,74 @@
 <body>
 <main class="page">
 	 	<section class="shopping-cart dark">
+		 <?php
+          		echo form_open('pages/update');
+				?>
 	 		<div class="container">
 		        <div class="content">
 	 				<div class="row">
 	 					<div class="col-md-12 col-lg-8">
+							
+						 <?php 
+						 $i = 1;
+						 foreach ($cart->contents() as $key => $value){ ?>
 	 						<div class="items">
 				 				<div class="product">
 				 					<div class="row">
-					 					<div class="col-md-3">
-					 						<img class="img-fluid mx-auto d-block image" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum Salmon.png">
-					 					</div>
+									 <div class="col-md-3">
+										 	<img src="<?= base_url('Assets/AdminLTE-3.2.0/dist/img/produk/' . $value['foto']) ?>" style="width:205px; height:141px">
+									    </div>
 					 					<div class="col-md-8">
 					 						<div class="info">
 						 						<div class="row">
 							 						<div class="col-md-5 product-name">
 							 							<div class="product-name">
-								 							<a href="#">Dimsum Salmon</a>
-								 							<div class="product-info">
-									 							<div>Varian : <span class="value">Salmon</span></div>
-									 						</div>
+								 							<a href="#"><?= $value['name'] ?></a>
 									 					</div>
+														 <div class="col-md-4 quantity">
+							 							<label for="quantity">Quantity: </label>
+							 							<input id="quantity" min="1" name="qty<?= $i++?>" type="number" value ="<?= $value['qty'] ?>" class="form-control quantity-input">
 							 						</div>
-							 						<div class="col-md-4 quantity">
-							 							<label for="quantity">Quantity:</label>
-							 							<input id="quantity" type="number" value ="1" class="form-control quantity-input">
+							 						</div> 
+							 						<div class="col-md-3 price">
+													 <label for="price">Harga: </label>
+							 							<span><?= number_to_currency($value['price'],'IDR'); ?></span>
 							 						</div>
 							 						<div class="col-md-3 price">
-							 							<span>Rp. 5.000,00</span>
+													 <label for="price">SubTotal: </label>
+							 							<span><?= number_to_currency($value['subtotal'],'IDR'); ?></span>
 							 						</div>
-							 					</div>
-							 				</div>
-					 					</div>
-					 				</div>
-				 				</div>
-				 				<div class="product">
-				 					<div class="row">
-					 					<div class="col-md-3">
-					 						<img class="img-fluid mx-auto d-block image" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum Salmon.png">
-					 					</div>
-					 					<div class="col-md-8">
-					 						<div class="info">
-						 						<div class="row">
-							 						<div class="col-md-5 product-name">
-							 							<div class="product-name">
-								 							<a href="#">Dimsum Salmon</a>
-								 							<div class="product-info">
-									 							<div>Varian : <span class="value">Salmon</span></div>
-									 						</div>
-									 					</div>
-							 						</div>
-							 						<div class="col-md-4 quantity">
-							 							<label for="quantity">Quantity:</label>
-							 							<input id="quantity" type="number" value ="1" class="form-control quantity-input">
-							 						</div>
-							 						<div class="col-md-3 price">
-							 							<span>Rp. 5.000,00</span>
-							 						</div>
-							 					</div>
-							 				</div>
-					 					</div>
-					 				</div>
-				 				</div>
-				 				<div class="product">
-				 					<div class="row">
-					 					<div class="col-md-3">
-					 						<img class="img-fluid mx-auto d-block image" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum Salmon.png">
-					 					</div>
-					 					<div class="col-md-8">
-					 						<div class="info">
-						 						<div class="row">
-							 						<div class="col-md-5 product-name">
-							 							<div class="product-name">
-								 							<a href="#">Dimsum Salmon</a>
-								 							<div class="product-info">
-									 							<div>Varian : <span class="value">Salmon</span></div>
-									 						</div>
-									 					</div>
-							 						</div>
-							 						<div class="col-md-4 quantity">
-							 							<label for="quantity">Quantity:</label>
-							 							<input id="quantity" type="number" value ="1" class="form-control quantity-input">
-							 						</div>
-							 						<div class="col-md-3 price">
-							 							<span>Rp. 5.000,00</span>
-							 						</div>
+													 
 							 					</div>
 							 				</div>
 					 					</div>
 					 				</div>
 				 				</div>
 				 			</div>
+						 <?php } ?>
 			 			</div>
 			 			<div class="col-md-12 col-lg-4">
 			 				<div class="summary">
 			 					<h3>Total</h3>
-			 					<div class="summary-item"><span class="text">Subtotal</span><span class="price">Rp. 15.000,00</span></div>
-			 					<div class="summary-item"><span class="text">Discount</span><span class="price">Rp.      0,00</span></div>
-			 					<div class="summary-item"><span class="text">Shipping</span><span class="price">Rp.      0,00</span></div>
-			 					<div class="summary-item"><span class="text">Total</span><span class="price">Rp. 15.000,00</span></div>
-			 					<a href="/nota"><button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button></a> 
+			 					<div class="summary-item"><span class="text">Subtotal</span><span class="price"><?= number_to_currency($cart->total(),'IDR'); ?></span></div>
+			 					<div class="summary-item"><span class="text">Discount</span><span class="price"><?= number_to_currency($cart->total() *0.05,'IDR'); ?></span></div>
+			 					<div class="summary-item"><span class="text">Total</span><span class="price"><?= number_to_currency($cart->total() - ($cart->total() *0.05),'IDR'); ?></span></span></div>
+			 					<a href="/bayar"><button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button></a> 
 				 			</div>
 			 			</div>
 		 			</div> 
 		 		</div>
+				 
 	 		</div>
+			<div>
+              <button type="submit" class="btn btn-primary" style="margin: 15px; background-color:green"><i class="fa fa-save"></i> Update</button>
+
+			</div>
+			<?php echo form_close(); ?>
 		</section>
 	</main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 </html>
 

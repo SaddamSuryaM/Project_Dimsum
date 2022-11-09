@@ -38,7 +38,14 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/home', 'Home');
 $routes->post('/admin', 'Login::admin');
-$routes->get('/mahasiswa', 'MahasiswaController::index');
+$routes->get('/buy', 'belanjaController::index');
+$routes->post('pages/add', 'Pages::add');
+$routes->post('pages/update', 'Pages::update');
+$routes->delete('pages/delete/(:num)', 'Pages::hapus/$1');
+$routes->get('/cek', 'Pages::cek');
+$routes->get('/clear', 'Pages::clear');
+$routes->get('/cart', 'Pages::cart');
+
 $routes->get('/create', 'MahasiswaController::create');
 $routes->post('/store', 'MahasiswaController::store');
 $routes->get('/keluar', 'Logout::logout');

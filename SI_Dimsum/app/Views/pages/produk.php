@@ -144,27 +144,52 @@
     <p class="fs-2 detail"><strong>Frozen Dimsum</strong></p>
   </div>
   <div class="container">
+  <div class="col-lg-12">
+        <?php
+        if (session()->getFlashdata('pesan')){
+          echo '<div class="alert alert-success alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+          echo session()->getFlashdata('pesan');
+          echo '</div>';
+        }
+        ?>
+      </div>
     <div class="row g-0">
-
-      <?php foreach ($produk as $p): ?>
+    <?php foreach ($produk as $p => $value){ ?>
         <div class="col-lg-3">
+  
+        <?php
+          echo form_open('pages/add');
+          echo form_hidden('id',$value['id']); 
+          echo form_hidden('foto',$value['foto']); 
+          echo form_hidden('produk',$value['produk']);
+          echo form_hidden('desk',$value['desk']); 
+          echo form_hidden('harga',$value['harga']); 
+          ?>
           <div class="card">
             <div class="imgBx">
-              <img src="<?php echo base_url('Assets/AdminLTE-3.2.0/dist/img/produk/' . $p['foto']) ?>">
+              <img src="<?= base_url('Assets/AdminLTE-3.2.0/dist/img/produk/' . $value['foto']) ?>">
             </div>
             <div class="contentBx">
-              <h2><?php echo $p['produk'] ?></h2>
+              <h2><?= $value['produk'] ?></h2>
               <div class="size">
                 <h3>
-                  <?php echo $p['desk'] ?>
+                  <?= $value['desk'] ?>
                 </h3>
               </div>
-              <a href="/belanja">Buy Now</a>
+              <div> 
+              <label><?= number_to_currency($value['harga'],'IDR'); ?></label>
+              
+              <button type="submit" class="btn btn-success btn-sn" style="margin-left: 15px;"><i class="fa fa-shopping-basket"></i> Buy Now</button>
+              </div>
+              
+           
             </div>
           </div>
+          <?php echo form_close(); ?>
         </div>
-      <?php endforeach ?>
-
+       
+      <?php } ?>
+      
 
     </div>
   </div>

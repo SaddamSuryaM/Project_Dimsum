@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
 
               <li class="nav-item" style="margin-right: 50px ;">
-                <a href="/belanja" class="nav-link" style="color:#FFE6D4">Belanja</a>
+                <a href="/cart" class="nav-link" style="color:#FFE6D4">Belanja</a>
               </li>
 
               <li class="nav-item" style="margin-right: 50px ;">
@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <li class="nav-item" style="margin-right: 50px ;">
                 <!-- Button trigger modal -->
-     
+
                 <?php if (session()->get('data')) : ?>
                     <a class="btn btn-danger" href="/keluar">logout</a>
                   <?php else : ?>
