@@ -37,14 +37,17 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/home', 'Home');
+$routes->get('/contact', 'UsController::index');
 $routes->post('/admin', 'Login::admin');
-$routes->get('/buy', 'belanjaController::index');
-$routes->post('pages/add', 'Pages::add');
-$routes->post('pages/update', 'Pages::update');
-$routes->delete('pages/delete/(:num)', 'Pages::hapus/$1');
+$routes->post('/pages/add', 'Pages::add');
+$routes->post('/pages/update', 'Pages::update');
+$routes->get('/buyAja', 'Pages::bayar');
+$routes->get('/buy', 'Pages::buy');
+$routes->get('/pages/delete/(:any)', 'Pages::delete/$1');
 $routes->get('/cek', 'Pages::cek');
 $routes->get('/clear', 'Pages::clear');
 $routes->get('/cart', 'Pages::cart');
+
 
 $routes->get('/create', 'MahasiswaController::create');
 $routes->post('/store', 'MahasiswaController::store');
