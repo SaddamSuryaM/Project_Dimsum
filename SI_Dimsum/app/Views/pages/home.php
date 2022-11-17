@@ -38,18 +38,33 @@
           penyajian, yang tentunya dengan harga terjangkau. </p>
       </div>
       <div class="col-lg-5">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum Ayam.png" style="width:520px ;height:350px;">
+              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 69.png" style="width:500px ;height:350px;">
             </div>
             <div class="carousel-item">
-              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum Sayur.png" style="width:520px ;height:350px;">
+              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 68.png" style="width:500px ;height:350px;">
             </div>
             <div class="carousel-item">
-              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Dimsum Vulcano.png" style="width:520px ;height:350px;">
+              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 67(1).png" style="width:500px ;height:350px;">
             </div>
           </div>
+          <div class="col-lg-12">
+          <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+            <span aria-hidden="true">
+              <img src="/Assets/AdminLTE-3.2.0/dist/img/back.png">
+            </span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+            <span aria-hidden="true">
+              <img src="/Assets/AdminLTE-3.2.0/dist/img/front.png">
+            </span>
+            <span class="sr-only">Next</span>
+          </a>
+          </div>
+          
         </div>
       </div>
     </div>

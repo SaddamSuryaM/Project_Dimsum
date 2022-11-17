@@ -157,7 +157,6 @@
 		        <div class="content">
 	 				<div class="row">
 	 					<div class="col-md-12 col-lg-8">
-							
 						 <?php 
 						 $i = 1;
 						 foreach ($cart->contents() as $key => $value){ ?>
@@ -170,9 +169,9 @@
 					 					<div class="col-md-8">
 					 						<div class="info">
 						 						<div class="row">
-							 						<div class="col-md-5 product-name">
+							 						<div class="col-md-4 product-name">
 							 							<div class="product-name">
-								 							<a href="#"><?= $value['name'] ?></a>
+								 							<a style="font-family: Laila;"><?= $value['name'] ?></a>
 									 					</div>
 														 <div class="col-md-4 quantity">
 							 							<label for="quantity">Quantity: </label>
@@ -187,7 +186,10 @@
 													 <label for="price">SubTotal: </label>
 							 							<span><?= number_to_currency($value['subtotal'],'IDR'); ?></span>
 							 						</div>
-													 
+													 <div class="col-md-2 price">
+													 	<a href="pages/delete/<?= $value['rowid']?>" onclick="return confirm('Apakah anda ingin menghapus <?= $value['name'] ?>');"><button type="button" class="btn btn-primary" style="margin: 15px; background-color:#463C23"><i class="fa fa-trash"></i></button></a> 
+
+													</div>
 							 					</div>
 							 				</div>
 					 					</div>
@@ -202,18 +204,23 @@
 			 					<div class="summary-item"><span class="text">Subtotal</span><span class="price"><?= number_to_currency($cart->total(),'IDR'); ?></span></div>
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price"><?= number_to_currency($cart->total() *0.05,'IDR'); ?></span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price"><?= number_to_currency($cart->total() - ($cart->total() *0.05),'IDR'); ?></span></span></div>
-			 					<a href="/bayar"><button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button></a> 
+			 					<a href="/buy"><button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:#463C23">Bayar</button></a> 
 				 			</div>
 			 			</div>
 		 			</div> 
 		 		</div>
 				 
 	 		</div>
-			<div>
-              <button type="submit" class="btn btn-primary" style="margin: 15px; background-color:green"><i class="fa fa-save"></i> Update</button>
-
+			
+			<div class="row">
+				<div class="col-md">
+					<button type="submit" class="btn btn-primary" style="margin: 15px; background-color:green;"><i class="fa fa-save"></i> Update</button>
+					<a href="/clear"><button type="button" class="btn btn-primary" style="margin: 15px; background-color:#F6B040" onclick="return confirm('Apakah anda yakin ingin menghapus semua daftar belanja anda?');"><i class="fa fa-trash"></i> Clear</button></a> 
+				</div>
 			</div>
+			
 			<?php echo form_close(); ?>
+
 		</section>
 	</main>
 </body>

@@ -179,7 +179,7 @@
               <div> 
               <label><?= number_to_currency($value['harga'],'IDR'); ?></label>
               
-              <button type="submit" class="btn btn-success btn-sn" style="margin-left: 15px;"><i class="fa fa-shopping-basket"></i> Buy Now</button>
+              <button type="submit" class="btn btn-success btn-sm" style="margin-left: 15px; background-color:#463C23"><i class="fa fa-shopping-basket"></i> Buy Now</button>
               </div>
               
            

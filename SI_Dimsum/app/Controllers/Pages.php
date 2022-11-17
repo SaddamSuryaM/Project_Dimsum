@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Produk;
+use App\Models\Order;
 
 class Pages extends BaseController
 {
@@ -61,11 +62,28 @@ class Pages extends BaseController
         session()->setFlashdata('pesan','Dimsum telah masuk ke daftar belanja anda!!!');
         return redirect()->to(base_url('produk'));
     }
+    public function bayar(){
+        $order = new Order();
+        $cart = \Config\Services::cart();
+        $response = ($cart->contents());
+        $responses = json_encode($cart);
+        $order->insert(array(
+            
+            'id'          => $this->request->getPost($response['id']),
+            'nama_produk' => $this->request->getPost($response['name']),
+            'foto'        => $this->request->getPost($response['foto']),
+            'kuantity'    => $this->request->getPost($response['qty']),
+            'harga'       => $this->request->getPost($response['price']),
+            'SubTotal'    => $this->request->getPost($response['subtotal'])
+        ));
+        session()->setFlashdata('pesan','Dimsum telah masuk ke daftar belanja anda!!!');
+        return redirect()->to(base_url('produk'));
+    }
     
     public function clear(){
         $cart = \Config\Services::cart();
         $cart->destroy();
-        return redirect()->to(base_url('cek'));
+        return redirect()->to(base_url('cart'));
     }
 
     public function cart(){
@@ -74,26 +92,69 @@ class Pages extends BaseController
             'title' => 'Belanja',
             'cart'=>\Config\Services::cart(),
         ];
-
+        
         return view('pages\belanja',$data);
     }
-
+    
     public function update(){
         $cart = \Config\Services::cart();
         $i = 1;
         foreach ($cart->contents() as $key => $value){
-        $cart->update(array(
-            'rowid'   => $value['rowid'],
-            'qty'     => $this->request->getPost('qty'.$i++),
-         ));
+            $cart->update(array(
+                'rowid'   => $value['rowid'],
+                'qty'     => $this->request->getPost('qty'.$i++),
+            ));
         }
-        session()->setFlashdata('pesan','Daftar belanja dimsum anda telah berhasil di update!!!');
         return redirect()->to(base_url('cart'));
     }
 
-    public function hapus($rowid){
+    public function delete($rowid){
         $cart = \Config\Services::cart();
         $cart->remove($rowid);
         return redirect()->to(base_url('cart'));
+    }
+    
+    // public function bayar(){
+    //     // $cart = \Config\Services::cart();
+    //     // $value=$cart->contents();
+    //     $cart = \Config\Services::cart();
+    //     $order = new Order();
+    //     $response = ($cart->contents());
+    //     // $data = json_encode($response);
+    //     $serialized_data = serialize($response);
+    //     foreach ($response as $key => $value){
+    //         $data = "insert into orders (id,nama_produk,foto,kuantity,harga,SubTotal) value ('{$value['id']}', '{$value['name']}','{$value['foto']}','{$value['qty']}','{$value['price']}','{$value['subtotal']}'";
+    //     // $order->insert(array(
+    //     // $data = [
+    //             // 'id'          => $this->request->getPost(json_encode($value['id'],true)),
+    //             // 'nama_produk' => $this->request->getPost(json_encode($value['name'],true)),
+    //             // 'foto'        => $this->request->getPost(json_encode($value['foto'],true)),
+    //             // 'kuantity'    => $this->request->getPost(json_encode($value['qty'],true)),
+    //             // 'harga'       => $this->request->getPost(json_encode($value['price'],true)),
+    //             // 'SubTotal'    => $this->request->getPost(json_encode($value['subtotal'],true))
+    //         // ];
+    //     // ));
+    //     // $order -> insert($data);
+    //     }
+    //     // $data = [
+    //     //     'id'          => $this->request->getPost('id'),
+    //     //     'nama_produk' => $this->request->getPost('produk'),
+    //     //     'foto'        => $this->request->getPost('foto'),
+    //     //     'kuantity'    => $this->request->getPost('qty'),
+    //     //     'harga'       => $this->request->getPost('harga'),
+    //     //     'SubTotal'    => $this->request->getPost('SubTotal')
+    //     // ];
+
+        
+    //     $cart->destroy();
+    //     return redirect()->to(base_url('cart'));
+        
+
+        
+
+    // }
+
+    public function buy(){
+        return view('pages/bayar');
     }
 }
