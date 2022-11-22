@@ -67,6 +67,14 @@ $routes->post('/daftar/simpan', 'Register::simpan');
 $routes->get('/editProduk/(:num)', 'ProdukController::edit/$1');
 $routes->delete('/deleteProduk/(:num)', 'ProdukController::delete/$1');
 
+// Contact
+$routes->get('/Teams', 'UsController::index2');
+$routes->get('/tambahContact', 'UsController::create');
+$routes->post('/simpanContact', 'UsController::simpan');
+$routes->post('/updateContact/(:num)', 'UsController::update/$1');
+$routes->get('/editContact/(:num)', 'UsController::edit/$1');
+$routes->delete('/deleteContact/(:num)', 'UsController::delete/$1');
+
 // Help
 $routes->get('/Help', 'HelpController::index');
 $routes->get('/tambahHelp', 'HelpController::create');
