@@ -38,33 +38,32 @@
           penyajian, yang tentunya dengan harga terjangkau. </p>
       </div>
       <div class="col-lg-5">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 69.png" style="width:500px ;height:350px;">
-            </div>
-            <div class="carousel-item">
-              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 68.png" style="width:500px ;height:350px;">
-            </div>
-            <div class="carousel-item">
-              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 67(1).png" style="width:500px ;height:350px;">
-            </div>
-          </div>
-          <div class="col-lg-12">
+        <div class="col-lg-12 col">
           <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
             <span aria-hidden="true">
-              <img src="/Assets/AdminLTE-3.2.0/dist/img/back.png">
+              <img src="/Assets/AdminLTE-3.2.0/dist/img/back.png" style="margin-top:650px ;">
             </span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
             <span aria-hidden="true">
-              <img src="/Assets/AdminLTE-3.2.0/dist/img/front.png">
+              <img src="/Assets/AdminLTE-3.2.0/dist/img/front.png" style="margin-top:650px ;">
             </span>
             <span class="sr-only">Next</span>
           </a>
+        </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 69.png" style="width:520px ;height:350px;">
+            </div>
+            <div class="carousel-item">
+              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 68.png" style="width:520px ;height:350px;">
+            </div>
+            <div class="carousel-item">
+              <img class="fs-2 dimsum" src="/Assets/AdminLTE-3.2.0/dist/img/Rectangle 67(1).png" style="width:520px ;height:350px;">
+            </div>
           </div>
-          
         </div>
       </div>
     </div>
