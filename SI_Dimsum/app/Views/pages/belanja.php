@@ -204,7 +204,7 @@
 			 					<div class="summary-item"><span class="text">Subtotal</span><span class="price"><?= number_to_currency($cart->total(),'IDR'); ?></span></div>
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price"><?= number_to_currency($cart->total() *0.05,'IDR'); ?></span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price"><?= number_to_currency($cart->total() - ($cart->total() *0.05),'IDR'); ?></span></span></div>
-			 					<a href="/buy"><button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:#463C23">Bayar</button></a> 
+								<a href="/buy"><button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:#463C23">Bayar</button></a>
 				 			</div>
 			 			</div>
 		 			</div> 

@@ -37,10 +37,7 @@ class Pages extends BaseController
                 return view('pages/' . $page);
             }
         }
-        
-        
     }
-
     
     public function cek(){
         $cart = \Config\Services::cart();
@@ -61,24 +58,7 @@ class Pages extends BaseController
          ));
         session()->setFlashdata('pesan','Dimsum telah masuk ke daftar belanja anda!!!');
         return redirect()->to(base_url('produk'));
-    }
-    public function bayar(){
-        $order = new Order();
-        $cart = \Config\Services::cart();
-        $response = ($cart->contents());
-        $responses = json_encode($cart);
-        $order->insert(array(
-            
-            'id'          => $this->request->getPost($response['id']),
-            'nama_produk' => $this->request->getPost($response['name']),
-            'foto'        => $this->request->getPost($response['foto']),
-            'kuantity'    => $this->request->getPost($response['qty']),
-            'harga'       => $this->request->getPost($response['price']),
-            'SubTotal'    => $this->request->getPost($response['subtotal'])
-        ));
-        session()->setFlashdata('pesan','Dimsum telah masuk ke daftar belanja anda!!!');
-        return redirect()->to(base_url('produk'));
-    }
+    } 
     
     public function clear(){
         $cart = \Config\Services::cart();
@@ -114,6 +94,22 @@ class Pages extends BaseController
         return redirect()->to(base_url('cart'));
     }
     
+    public function bayar(){
+        $order = new Order();
+        $data = [
+            
+            'id'          => $this->request->getPost('ide'),
+            'nama_produk' => $this->request->getPost('nama_produk'),
+            'foto'        => $this->request->getPost('fotos'),
+            'kuantity'    => $this->request->getPost('kuantitas'),
+            'harga'       => $this->request->getPost('pricess'),
+            'SubTotal'    => $this->request->getPost('subotall')       
+        ];
+        $order -> save($data);
+        session()->setFlashdata('pesan','Dimsum telah masuk ke daftar belanja anda!!!');
+        return redirect()->to(base_url('produk'));
+    }
+
     // public function bayar(){
     //     // $cart = \Config\Services::cart();
     //     // $value=$cart->contents();

@@ -26,6 +26,10 @@
             <span class="icon"></span>
             <span class="text">Management Bantuan</span>
           </a>
+          <a class="link-item" href="<?php echo base_url('Teams') ?>">
+          <span class="icon"></span>
+          <span class="text">Management Contact</span>
+        </a>
           <a class="link-item" href="<?php echo base_url('/keluar') ?>">
             <span class="icon"></span>
             <span class="text">Logout</span>

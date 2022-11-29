@@ -27,14 +27,12 @@ class OrderController extends BaseController
         return view('/pages/bayar', $data);
     }
 
+    
+
     public function bayar()
     {
         $order = new Order();
         $cart = \Config\Services::cart();
-
-        $data = [
-            'order' => $this->request->getPost('ide_order'),
-        ];
 
         foreach ($cart->contents() as $key => $value) {
             $order->insert([
@@ -42,12 +40,14 @@ class OrderController extends BaseController
                 'foto' => $this->request->getPost('fotoe' . $value['id']),
                 'kuantity' => $this->request->getPost('qtye' . $value['id']),
                 'harga' => $this->request->getPost('pricee' . $value['id']),
-                'SubTotal' => $this->request->getPost(
-                    'subtotale' . $value['id']
-                ),
+                'SubTotal' => $this->request->getPost('subtotale' . $value['id']),
+                'transaksi' => $this->request->getPost('transaksi'),
+                
             ]);
         }
         $cart->destroy();
-        return redirect()->to(base_url('nota'));
+        return redirect()->to(('/notaBayar'));
     }
+
+
 }

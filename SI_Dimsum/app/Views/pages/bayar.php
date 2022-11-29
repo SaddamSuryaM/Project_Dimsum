@@ -138,23 +138,39 @@
 <body>
     <div class="container-fluid">
         <div class="card" style="width : 25 rem;padding-bottom:60px;border-radius:50px; background-color:#F3ECE1">
-
             <div class="container" style="margin-top: 60px;">
+            <?php echo form_open('OrderController/bayar'); ?>
                 <div class="card-body" >
+                <?php foreach ($cart->contents() as $key => $value){ ?>
+                    <?php
+                    echo form_hidden('ide'.$value['id'],$value['id']); 
+                    echo form_hidden('fotoe'.$value['id'],$value['foto']); 
+                    echo form_hidden('produke'.$value['id'],$value['name']);
+                    echo form_hidden('qtye'.$value['id'],$value['qty']);
+                    echo form_hidden('subtotale'.$value['id'],$value['subtotal']); 
+                    echo form_hidden('pricee'.$value['id'],$value['price']); 
+                    echo form_hidden('transaksi',$value['id']); 
+                    
+                    ?>
                     <div class="container" style="margin-left:30px ;">
-                        <h2>Frozen Dimsum</h2>
-                        <div style="display:flex ;">
-                            <img src="https://asset.kompas.com/crops/yFCpuKxNvIx9uSxfduuOjMeL8a0=/183x185:784x585/750x500/data/photo/2022/05/19/6285d37131c23.jpg" style="border-radius: 20px;width:250px;height:200px;margin-right:80px;">
+                        
+                        <div style="display:flex ; margin:25px">
+                            <img src="<?= 
+                            base_url('Assets/AdminLTE-3.2.0/dist/img/produk/' . $value['foto']) ?>" style="border-radius: 20px;width:250px;height:200px;margin-right:80px;">
                             <div>
-                                <p class="card-text">Harga : 20.000</p>
-                                <p class="card-text">Jumlah : 2</p>
-                                <p class="card-text">Diskon : 5.000</p>
-                                <p class="card-text">Total : 35.000</p>
-                                <a href="/nota" class="btn btn-dark">Bayar</a>
+                            <h2><?= $value['name'] ?></h2>
+                                <p class="card-text">Harga : <?= number_to_currency($value['price'],'IDR'); ?></p>
+                                <p class="card-text">Jumlah : <?= $value['qty'] ?></p>
+                                <p class="card-text">Diskon : <?= number_to_currency(($value['subtotal'] *0.05),'IDR'); ?></p>
+                                <p class="card-text">Total : <?= number_to_currency($value['subtotal'],'IDR'); ?></p>
+                                
                             </div>
                         </div>
                     </div>
+                    <?php } ?>  
+                    <button type="submit" class="btn btn-primary" style="margin: 15px; background-color:black;"><i class="fa fa-buy"></i> Bayar</button>
                 </div>
+                <?php echo form_close(); ?>
             </div>
             <br>
         </div>

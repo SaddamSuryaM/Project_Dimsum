@@ -9,17 +9,16 @@ class UsController extends BaseController
 {
     public function index()
     {
-        $USModel = new UsModel();
-        $US = $USModel->findAll();
+            $USModel = new UsModel();
+            $US = $USModel->findAll();
 
-        $data = [
-            'title' => 'Contact',
-            'nama' => $US
-        ];
+            $data = [
+                'title' => 'Contact',
+                'nama' => $US
+            ];
 
-        return view('pages/contact',$data);
+            return view('pages/contact',$data);
     }
-    
     public function index2()
     {
         if (session()->get('data')['is_admin'] == '1') {

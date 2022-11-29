@@ -14,5 +14,5 @@ class Order extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id','nama_produk', 'foto', 'kuantity','harga','SubTotal'];
+    protected $allowedFields    = ['nama_produk', 'foto', 'kuantity','harga','SubTotal','transaksi'];
 }
